@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "naga";
+    src: url("/fonts/Naga.ttf");
+}
+
+body{
+    background-color: #f1f1f1!important;
+}
+
+
+.center{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    border-style: none;
+}
+
+.center p{
+    font-family: "naga";
+    font-size: medium;
+}
+
+.center button{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 15px 32px;
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.center p button{
+    font-family: "naga";
+    font-size: medium;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
+.center p button:hover{
+    background-color: rgb(240, 240, 240);
+}

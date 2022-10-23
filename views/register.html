@@ -1,0 +1,27 @@
+
+<html>
+    <head>
+     <meta charset="utf-8">
+     <link type="text/css" rel="stylesheet" href="/css/register.css" />
+     <title>Chatter</title>
+    </head>
+    <body>
+       <div class="center">
+          
+           <form action="/newUser" method="post">
+               <p>
+                   Логин  
+               </p>
+               <input type="text" placeholder="Введите логин" name="user" minlength="4" maxlength="10" required>
+               <p>
+                   Пароль
+               </p>
+               <input type="password" placeholder="Введите пароль" name="pwd" minlength="7" maxlength="15" required>
+               <p>
+                   <button type="submit">Зарегестрироваться</button>
+               </p>
+           </form> 
+   
+       </div>
+    </body>
+   </html>

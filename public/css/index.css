@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: "naga";
+    src: url("/fonts/Naga.ttf");
+}
+
+body{
+    background-color: #f1f1f1!important;
+}
+
+
+/* Top section */
+.top h1{
+    text-align: center;
+    font-family: "naga";
+    font-size: xx-large;
+}
+
+.top p{
+    text-align: center;
+    font-family: "naga";
+    font-size: medium;
+}
+
+.top li{
+    text-align: center;
+    font-family: "naga";
+    font-size: medium;
+}
+.top ul{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.top #links {
+    text-align: center;
+}
+
+.top #links a{
+    text-decoration: none;
+}
+
+.top #links a img{
+    border-radius: 50%;
+    width: 5%;
+    margin: 10px;
+    transition-duration: 0.3s;
+}
+
+.top #links a img:hover{
+    border-radius: 50%;
+    width: 5.5%;
+    margin: 10px;
+}
+
+
+/* Center section */
+
+.center{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    border-style: none;
+}
+
+.center p{
+    font-family: "naga";
+    font-size: medium;
+}
+
+.center button{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 15px 32px;
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.center p button{
+    font-family: "naga";
+    font-size: medium;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
+.center p button:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+/* Bottom section */
+
+.bottom{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+
+    text-align: center;
+    margin: 30px 10px 10px 10px;
+    padding: 15px;
+    border-style: none;
+}
+
+.bottom p{
+    font-family: "naga";
+    font-size: medium;
+}
+
+.bottom ul {
+    display: inline-block;
+    text-align: left;
+}

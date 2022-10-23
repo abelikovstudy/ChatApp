@@ -1,0 +1,8 @@
+20222108	14:12:44	61503f78-1d47-43cb-ab12-56d1b116b052	Error	CORS restricted that host
+20223108	21:24:39	bce8a8d8-a0e9-4c3e-bd14-31260f272017	Error	CORS restricted that host
+20223108	21:24:54	c99285e7-b578-465c-bb47-b3832d803851	Error	CORS restricted that host
+20223108	21:25:44	9a05d0d7-a53a-43ad-a846-a4f0b0d806f0	Error	CORS restricted that host
+20223108	21:29:35	9dbd4661-3c0b-4aa9-a776-de116e9b98c3	Error	CORS restricted that host
+20223108	21:29:37	98d899a6-4181-43ec-b1e6-4c2476e3368f	Error	CORS restricted that host
+20220209	16:54:35	482bcacf-ce0b-489e-874d-cf3aaa30c38a	Error	ENOENT: no such file or directory, stat 'C:\Program Files\server\routes\views\404.html'
+20222010	22:29:53	a591d4c3-dbfc-4a2a-844c-ba69c94dd02d	TypeError	next is not a function
