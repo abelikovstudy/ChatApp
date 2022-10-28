@@ -7,9 +7,31 @@ const bodyParser = require('body-parser')
 const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler  = require('./middleware/errorHandler');
+const db = require("./model/rolesSequaliser");
+const Role = db.role;
+
 const PORT = process.env.PORT || 3500;
 
-    
+/* DB Segment remove for prod */
+db.sequelize.sync({force: true}).then(() => {
+    console.log('Drop and Resync Db');
+    Role.create({
+        id: 1,
+        name: "user"
+      });
+     
+      Role.create({
+        id: 2,
+        name: "moderator"
+      });
+     
+      Role.create({
+        id: 3,
+        name: "admin"
+      });
+  });
+   
+/* DB Segment remove for prod */   
 app.use(express.urlencoded({extended: false}));
 app.use(cors(corsOptions));
 app.use(express.json());

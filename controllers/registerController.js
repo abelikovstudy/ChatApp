@@ -6,7 +6,10 @@ const userDB = {
 const fsPromises = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcrypt');
+const db = require('../model/rolesSequaliser')
 
+const Roles = db.ROLES;
+const Users = db.user;
 const handleNewUser = async (req, res) => {
     const {user, pwd} = req.body;
     if(!user || !pwd ) return res.status(400).json(

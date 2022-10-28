@@ -1,6 +1,6 @@
-const config = require("../config/dbConfig.js");
-const Sequelize = require("sequelize");
+const config = require("../config/dbConfig");
 
+const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
   config.DB,
   config.USER,
@@ -24,34 +24,8 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = (sequelize, Sequelize) => {
-    const User = sequelize.define("users", {
-      username: {
-        type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
-      }
-    });
-  
-    return User;
-  };
-db.role = (sequelize, Sequelize)=> {
-    const Role = sequelize.define("roles", {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-      },
-      name: {
-        type: Sequelize.STRING
-      }
-    });
-  
-    return Role;
-  };
+db.user = require("./dbModels/userModel")(sequelize, Sequelize);
+db.role = require("./dbModels/roleModel")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",

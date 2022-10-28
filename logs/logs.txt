@@ -1222,3 +1222,14 @@
 20222310	17:48:16	52dd3b0f-5ce4-41c9-b0b0-dd3ec95f12b9	GET	undefined	/css/login.css
 20222310	17:48:16	230db464-e438-4b57-bcc0-2dee35102d34	GET	http://localhost:3500	/fonts/Naga.ttf
 20222310	17:48:17	4a3c1951-0936-42cd-bd0e-48934615d0cc	POST	http://localhost:3500	/auth
+20222810	19:57:54	f25211aa-8358-4d82-a42a-245459c3a468	GET	undefined	/
+20222810	19:57:54	add33b60-73e4-4568-bfb4-78aec0041a26	GET	undefined	/css/index.css
+20222810	19:57:54	4dcc5685-d206-4181-8e0a-75acdfbfd773	GET	undefined	/img/github.png
+20222810	19:57:54	e069077e-0d7a-4258-b8cc-553b51c0b252	GET	undefined	/img/vk.png
+20222810	19:57:54	38b9a544-ec89-4b70-80bc-51f93ed904c9	GET	undefined	/img/headhunter.png
+20222810	19:57:55	ef2e2200-7223-4856-a66e-6efa87d414e9	GET	http://localhost:3500	/fonts/Naga.ttf
+20222810	19:57:55	e450cbb6-da29-4ae7-aea6-5c85d1f2b638	GET	undefined	/favicon.ico
+20222810	19:57:57	57fcf4a5-3ccb-495e-959c-8e2822750c98	GET	undefined	/register
+20222810	19:57:57	41d81895-ad34-4f38-a15b-1e0118945949	GET	undefined	/css/register.css
+20222810	19:57:57	8b092373-fd19-4c95-a098-5b4db9fb142a	GET	http://localhost:3500	/fonts/Naga.ttf
+20222810	19:57:58	4cdbfc26-1359-4f4c-97e4-678f6de1cdee	POST	http://localhost:3500	/newUser
