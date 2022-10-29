@@ -10,6 +10,7 @@ const db = require('../model/rolesSequaliser')
 
 const Roles = db.ROLES;
 const Users = db.user;
+
 const handleNewUser = async (req, res) => {
     const {user, pwd} = req.body;
     if(!user || !pwd ) return res.status(400).json(
@@ -17,7 +18,10 @@ const handleNewUser = async (req, res) => {
             'message' : 'Username and password are required'
         }
     );
-    const duplicate = userDB.users.find(user => user.username === user);
+
+        
+
+    const duplicate = User.findOne()
     if(duplicate) return res.sendStatus(409);
     try{
         const hashedPwd = await bcrypt.hash(pwd, 10);
