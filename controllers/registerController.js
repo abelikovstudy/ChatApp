@@ -33,7 +33,7 @@ const handleNewUser = async (req, res) => {
                     });
                 } else {
                     user.setRoles([1]).then(() => {
-                        res.status(200).json({ message: "User was registered successfully!" });
+                       res.status(200).json({ message: "User was registered successfully!" });
                     });
                 }
             })

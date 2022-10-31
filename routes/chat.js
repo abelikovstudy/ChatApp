@@ -1,6 +1,7 @@
 const express = require('express');
 const chatRouter = express.Router();
 const verifyJWT = require('../middleware/verifyJWT')
+const isAdmin = require('../controllers/verification/roleVerify');
 const path = require('path');
 
 chatRouter.get('^/$|chat(.html)?', (req, res)=>{

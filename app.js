@@ -40,13 +40,19 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-
+app.use(function(req, res, next) {
+  res.header(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Origin, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use('/', require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/auth', require('./routes/api/auth'));
-app.use('/newUser', require('./routes/api/newUser'));
 app.use('/register', require('./routes/register'));
+app.use('/api/newUser', require('./routes/api/newUser'));
 app.use('/chat', require('./routes/chat'))
 app.use('*', require('./routes/404'));
 
