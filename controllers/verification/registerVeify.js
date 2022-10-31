@@ -16,3 +16,5 @@ const checkDuplicate = (req, res , next) =>{
     })
     next();
 }
+
+module.exports = checkDuplicate;
