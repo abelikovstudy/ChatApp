@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken')
+
 const bcrypt = require('bcrypt');
 const db = require('../model/rolesSequaliser')
 
-const Roles = db.ROLES;
-const Users = db.user;
+const Role = db.ROLES;
+const User = db.user;
 const Op = db.Sequelize.Op;
 
 const handleNewUser = async (req, res) => {
@@ -15,9 +15,8 @@ const handleNewUser = async (req, res) => {
     );
     try {
         User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 8)
+            username: user,
+            password: bcrypt.hashSync(pwd, 8)
         })
             .then(user => {
                 if (req.body.roles) {
@@ -37,8 +36,6 @@ const handleNewUser = async (req, res) => {
                         res.status(200).json({ message: "User was registered successfully!" });
                     });
                 }
-            }).catch(err => {
-                res.status(500).send({message : err.message})
             })
 
     }

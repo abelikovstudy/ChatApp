@@ -1,70 +1,64 @@
-const usersDB = {
-    users: require('../model/users.json'), 
-    setUsers: function(data)
-    {
-        this.users = data;
-    }
-}
 
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const fs = require('fs').promises;
-const path = require('path');
-const handleLogin = async (req,res) =>
-{
-    const {user, pwd} = req.body;
-    if(!user || !pwd)
+const db = require('../model/rolesSequaliser')
+const Role = db.ROLES;
+const User = db.user;
+
+const handleLogin = async (req, res) => {
+    const { user, pwd } = req.body;
+    if (!user || !pwd)
         return res.status(400).json({
-            message : 'Login and password are required'
+            message: 'Login and password are required'
         });
-    const foundUser = usersDB.users.find(person => person.username === user);
-    if(!foundUser) return res.sendStatus(401);
-    const match = await bcrypt.compare(pwd, foundUser.password);
-    if(match)
-    {
-        const accessToken = jwt.sign(
-            {
-                "username" : foundUser.username
+    try {
+        User.findOne({
+            where: {
+                username: user
+            }
+        }).then(usr => {
+            if (!usr) {
+                return res.status(401).send({ message: "User not found" })
+            }
+    
+            let validPassword = bcrypt.compareSync(pwd, usr.password)
+    
+            if (!validPassword) {
+                res.status(401).send({
+                    accesToken: null,
+                    message: "Password is invalid!"
+                })
+            }
+    
+            let token = jwt.sign({
+                id: usr.id
             },
             process.env.ACCESS_TOKEN_SECRET,
             {
-                expiresIn : '30s'
-            }
-
-        );
-
-        const refreshToken = jwt.sign(
-            {
-                "username" : foundUser.username
-            },
-            process.env.ACCESS_TOKEN_SECRET,
-            {
-                expiresIn : '1d'
-            }
-
-        );
-
-
-        const otherUsers = usersDB.users.filter(person => person.username !== foundUser.username);
-        const currentUser  = {...foundUser, refreshToken}
-        usersDB.setUsers([...otherUsers,currentUser])
-
-        await fs.writeFile(
-            path.join(__dirname, '..', 'model', 'users.json'),
-            JSON.stringify(usersDB.users)
-            );
-        
-
-            res.cookie('jwt', refreshToken, {httpOnly: true, maxAge: 60 * 60 * 24 * 1000});
-            res.json({accessToken});
-
-        
+                expiresIn: 60 * 60 * 24 * 1000
+            })
+            let roleList = []
+            usr.getRoles().then(roles =>{
+                for( let i = 0; i < roles.length; i++){
+                    roleList.push("ROLE_" + roles[i].name.toUpperCase())
+                }
+                res.status(200).send({ 
+                    id : usr.id,
+                    user : user,
+                    roles: roleList,
+                    accesToken : token
+                })
+            })
+        })    
     }
-    else
-    {
-        res.sendStatus(401);
+    catch(err){
+        res.status(500).json({
+            'message': `Server error: ${err.message}`
+        })
     }
+ 
 }
 
-module.exports = {handleLogin};
+module.exports = { handleLogin };
