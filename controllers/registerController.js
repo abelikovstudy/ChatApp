@@ -8,11 +8,11 @@ const Op = db.Sequelize.Op;
 
 const handleNewUser = async (req, res) => {
     const { user, pwd } = req.body;
-    if (!user || !pwd) return res.status(400).json(
+     if (!user || !pwd) return res.status(400).json(
         {
             'message': 'Username and password are required'
         }
-    );
+    ); 
     try {
         User.create({
             username: user,
@@ -27,17 +27,14 @@ const handleNewUser = async (req, res) => {
                             }
                         }
                     }).then(roles => {
-                        user.setRoles(roles).then(() => {
-                            res.status(200).json({ message: "User was registered successfully!" });
-                        });
+                        user.setRoles(roles)
                     });
                 } else {
-                    user.setRoles([1]).then(() => {
-                       res.status(200).json({ message: "User was registered successfully!" });
-                    });
+                    user.setRoles([1])
                 }
-            })
 
+            })
+            res.status(200).json({ message: "User was registered successfully!" });
     }
     catch (err) {
         res.status(500).json({

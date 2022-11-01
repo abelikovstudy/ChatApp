@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler  = require('./middleware/errorHandler');
+const roleController = require('./controllers/verification/roleVerify')
 const db = require("./model/rolesSequaliser");
 const Role = db.role;
 
@@ -48,11 +49,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/', require('./routes/root'));
+app.use('/',require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/auth', require('./routes/api/auth'));
-app.use('/register', require('./routes/register'));
 app.use('/api/newUser', require('./routes/api/newUser'));
+app.use('/register', require('./routes/register'));
 app.use('/chat', require('./routes/chat'))
 app.use('*', require('./routes/404'));
 

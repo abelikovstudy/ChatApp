@@ -6,3 +6,8 @@
 20223108	21:29:37	98d899a6-4181-43ec-b1e6-4c2476e3368f	Error	CORS restricted that host
 20220209	16:54:35	482bcacf-ce0b-489e-874d-cf3aaa30c38a	Error	ENOENT: no such file or directory, stat 'C:\Program Files\server\routes\views\404.html'
 20222010	22:29:53	a591d4c3-dbfc-4a2a-844c-ba69c94dd02d	TypeError	next is not a function
+20220111	00:24:36	cc5e85e7-ecf7-40e5-b21b-d7e563f0dfb3	Error	Cannot set headers after they are sent to the client
+20220111	00:24:53	83bb9997-5f39-48a3-b3a8-03f93bf4d676	Error	Cannot set headers after they are sent to the client
+20220111	00:26:18	78b689df-be0e-4c8b-9243-5a71dbba31ab	Error	Cannot set headers after they are sent to the client
+20220111	00:26:26	1aa76cb4-1355-4e84-917e-b362aca9c809	Error	Cannot set headers after they are sent to the client
+20220211	01:27:25	035543a1-b15e-494f-b41e-433edf8ad237	Error	Cannot set headers after they are sent to the client

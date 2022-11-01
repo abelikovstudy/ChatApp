@@ -2,6 +2,7 @@ const db = require("../../model/rolesSequaliser");
 const User = db.user;
 
 const checkDuplicate = (req, res, next) => {
+    let error = false;
     User.findOne({
         where: {
             username: req.body.user
@@ -10,12 +11,13 @@ const checkDuplicate = (req, res, next) => {
         if (user) {
             res.status(400).send({
                 message: "Username already taken!"
-            })
+            });
+            return; 
         }
-        return;
 
+        next();
     })
-    next();
+
 }
 
 module.exports = checkDuplicate;
