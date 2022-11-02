@@ -23,3 +23,6 @@
 20220211	19:09:10	aeb72474-157c-4fa6-968f-da0dc8735a2b	Error	Cannot set headers after they are sent to the client
 20220211	19:10:26	5faa5431-42d1-4eaf-8f62-fcc51ff545dd	Error	Cannot set headers after they are sent to the client
 20220211	19:37:34	962f274f-553f-44a4-8332-f5ff6589e9ea	Error	Cannot set headers after they are sent to the client
+20220211	21:04:56	b78d66e1-b3b7-4ff9-a276-9a9cfdce18ea	ReferenceError	jwt is not defined
+20220211	21:12:10	ad66b5c5-a9b9-4fe2-b85a-a45535e512ab	Error	Can't set headers after they are sent.
+20220211	21:16:29	a8e51106-064c-4414-bb62-a8260009776c	Error	Can't set headers after they are sent.

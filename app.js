@@ -41,14 +41,14 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.use(function(req, res, next) {
+/* app.use(function(req, res, next) {
   res.header(
     "Access-Control-Allow-Headers",
     "x-access-token, Origin, Content-Type, Accept"
   );
   next();
 });
-
+ */
 app.use('/',require('./routes/root'));
 app.use('/login', require('./routes/login'));
 app.use('/auth', require('./routes/api/auth'));
