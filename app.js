@@ -8,6 +8,7 @@ const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler  = require('./middleware/errorHandler');
 const roleController = require('./controllers/verification/roleVerify')
+var cookieParser = require('cookie-parser')
 const db = require("./model/rolesSequaliser");
 const Role = db.role;
 
@@ -38,7 +39,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(logger);
 app.use(bodyParser.json())
-
+app.use(cookieParser())
 app.use(express.static(path.join(__dirname, '/public')));
 
 /* app.use(function(req, res, next) {

@@ -6,8 +6,7 @@ const path = require('path');
 
 chatRouter.get('^/$|chat(.html)?',
 [
-    roleVerify.verifyToken,
-    roleVerify.isModerator 
+    roleVerify.verifyToken
 ],
  (req, res)=>{
     res.sendFile(path.join(__dirname, '../views', 'chat.html'))

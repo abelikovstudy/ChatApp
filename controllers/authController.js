@@ -31,7 +31,15 @@ const handleLogin = async (req, res) => {
                     message: "Password is invalid!"
                 })
             }
-    
+            
+            let cookieOptions = {
+                path:"/",
+                sameSite:true,
+                maxAge: 1000 * 60 * 60 * 24, 
+                httpOnly: true, 
+            }
+        
+
             let token = jwt.sign({
                 id: usr.id
             },
@@ -44,11 +52,11 @@ const handleLogin = async (req, res) => {
                 for( let i = 0; i < roles.length; i++){
                     roleList.push("ROLE_" + roles[i].name.toUpperCase())
                 }
+                res.cookie('x-access-token',token, cookieOptions) 
                 res.status(200).send({ 
                     id : usr.id,
                     user : user,
-                    roles: roleList,
-                    accesToken : token
+                    roles: roleList
                 })
             })
         })    
