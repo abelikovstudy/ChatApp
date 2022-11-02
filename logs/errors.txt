@@ -11,3 +11,15 @@
 20220111	00:26:18	78b689df-be0e-4c8b-9243-5a71dbba31ab	Error	Cannot set headers after they are sent to the client
 20220111	00:26:26	1aa76cb4-1355-4e84-917e-b362aca9c809	Error	Cannot set headers after they are sent to the client
 20220211	01:27:25	035543a1-b15e-494f-b41e-433edf8ad237	Error	Cannot set headers after they are sent to the client
+20220211	01:35:18	f10abc9c-691a-40e8-a21b-4622810147cf	SyntaxError	Unexpected token , in JSON at position 50
+20220211	18:26:56	647254bb-692d-4396-83c6-96f77b57efcb	Error	Cannot set headers after they are sent to the client
+20220211	18:31:23	665fdbc2-7f2c-42e7-b51f-2fac449ff302	TypeError	Cannot read property 'includes' of undefined
+20220211	18:34:02	aceb6233-0af9-49be-892e-e3b33a26ed66	TypeError	ROLES.includes is not a function
+20220211	18:34:54	7262dfea-1313-4ede-ac5c-a8851223ae8c	TypeError	ROLES.includes is not a function
+20220211	18:39:50	6d5e39c0-5f3f-498d-8e20-358b20d177fe	TypeError	Cannot read property 'includes' of undefined
+20220211	18:43:30	c7db1958-d122-4708-9015-d2391e05c33a	TypeError	Cannot read property 'includes' of undefined
+20220211	18:45:58	efd107c4-a663-43be-a2aa-e31c825c5f18	SyntaxError	Unexpected token } in JSON at position 61
+20220211	18:46:03	6380680b-35aa-4e68-85d7-6a8de76bb1d1	TypeError	Cannot read property 'includes' of undefined
+20220211	19:09:10	aeb72474-157c-4fa6-968f-da0dc8735a2b	Error	Cannot set headers after they are sent to the client
+20220211	19:10:26	5faa5431-42d1-4eaf-8f62-fcc51ff545dd	Error	Cannot set headers after they are sent to the client
+20220211	19:37:34	962f274f-553f-44a4-8332-f5ff6589e9ea	Error	Cannot set headers after they are sent to the client

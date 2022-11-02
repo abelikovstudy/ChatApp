@@ -1,11 +1,16 @@
 const express = require('express');
 const chatRouter = express.Router();
-const verifyJWT = require('../middleware/verifyJWT')
-const isAdmin = require('../controllers/verification/roleVerify');
+//const verifyJWT = require('../middleware/verifyJWT')
+const roleVerify = require('../controllers/verification/roleVerify');
 const path = require('path');
 
-chatRouter.get('^/$|chat(.html)?', (req, res)=>{
-    verifyJWT(req,res, res.sendFile(path.join(__dirname, '../views', 'chat.html')))
+chatRouter.get('^/$|chat(.html)?',
+[
+    roleVerify.verifyToken,
+    roleVerify.isModerator 
+],
+ (req, res)=>{
+    res.sendFile(path.join(__dirname, '../views', 'chat.html'))
 })
 
 module.exports = chatRouter;

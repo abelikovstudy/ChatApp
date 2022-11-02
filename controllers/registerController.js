@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt');
 const db = require('../model/rolesSequaliser')
 
-const Role = db.ROLES;
+const Role = db.role;
 const User = db.user;
 const Op = db.Sequelize.Op;
 
@@ -20,7 +20,7 @@ const handleNewUser = async (req, res) => {
         })
             .then(user => {
                 if (req.body.roles) {
-                    Role.findAll({
+                     Role.findAll({
                         where: {
                             name: {
                                 [Op.or]: req.body.roles
