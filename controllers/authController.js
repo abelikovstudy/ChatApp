@@ -51,9 +51,23 @@ const handleLogin = async (req, res) => {
             usr.getRoles().then(roles =>{
                 for( let i = 0; i < roles.length; i++){
                     roleList.push("ROLE_" + roles[i].name.toUpperCase())
+                    switch(roles[i].name){
+                        case "user":
+                            res.cookie('role',roles[i].name, cookieOptions) 
+                            break;
+                        case "moderator":
+                            res.cookie('role',roles[i].name, cookieOptions) 
+                            break;
+                        case "admin":
+                            res.cookie('role',roles[i].name, cookieOptions) 
+                            break;
+                        default:
+                            res.cookie('role',roles[i].name, cookieOptions) 
+                            
+                    }
                 }
                 res.cookie('x-access-token',token, cookieOptions)
-                res.cookie('roles',JSON.stringify(roleList), cookieOptions) 
+
                 res.status(200).redirect('/chat')
 
             })

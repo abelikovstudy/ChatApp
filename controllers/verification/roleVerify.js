@@ -42,8 +42,9 @@ const verifyToken = (req, res, next) => {
 
 
 const isUser = (req, res, next) => {
+  let role = req.cookies['role'];
   User.findByPk(req.userId).then(user => {
-    if (req.body.roles == null) {
+    if (role === null) {
       res.status(403).send({
         message: "Require Role!"
       });
@@ -59,7 +60,7 @@ const isUser = (req, res, next) => {
     else{
       user.getRoles().then(roles => {
         for (let i = 0; i < roles.length; i++) {
-          if (roles[i].name === "user") {
+          if (roles[i].name === role) {
             next();
             return;
           }
