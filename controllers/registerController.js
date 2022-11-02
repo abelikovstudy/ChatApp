@@ -34,7 +34,7 @@ const handleNewUser = async (req, res) => {
                 }
 
             })
-            res.status(200).json({ message: "User was registered successfully!" });
+            res.status(200).redirect('/')
     }
     catch (err) {
         res.status(500).json({

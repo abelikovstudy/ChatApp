@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, '/public')));
  */
 app.use('/',require('./routes/root'));
 app.use('/login', require('./routes/login'));
-app.use('/auth', require('./routes/api/auth'));
+app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/newUser', require('./routes/api/newUser'));
 app.use('/register', require('./routes/register'));
 app.use('/chat', require('./routes/chat'))

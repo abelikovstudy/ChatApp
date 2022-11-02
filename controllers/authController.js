@@ -52,12 +52,10 @@ const handleLogin = async (req, res) => {
                 for( let i = 0; i < roles.length; i++){
                     roleList.push("ROLE_" + roles[i].name.toUpperCase())
                 }
-                res.cookie('x-access-token',token, cookieOptions) 
-                res.status(200).send({ 
-                    id : usr.id,
-                    user : user,
-                    roles: roleList
-                })
+                res.cookie('x-access-token',token, cookieOptions)
+                res.cookie('roles',JSON.stringify(roleList), cookieOptions) 
+                res.status(200).redirect('/chat')
+
             })
         })    
     }
