@@ -29,3 +29,9 @@
 20220211	22:57:34	ad564903-d7cd-4696-9008-a7de65e80051	Error	Can't set headers after they are sent.
 20220211	22:57:40	11dfecc8-5870-447c-b289-d0cdf2dcb1bd	Error	Can't set headers after they are sent.
 20220211	23:27:08	4bfb68cc-0d7e-4966-b93c-0de60d022eb4	SyntaxError	Unexpected token u in JSON at position 0
+20220411	01:01:10	efe367a8-91ab-47c4-b810-7163e577819b	Error	CORS restricted that host
+20220411	01:03:15	270426fb-a805-4daa-95cd-b52dea6194e8	Error	CORS restricted that host
+20220411	01:06:16	1781c313-cf6f-436f-81f3-069324b8ee1f	Error	CORS restricted that host
+20220411	01:07:42	8b02605f-459a-433b-84d1-7fdfdcf5b830	Error	CORS restricted that host
+20220411	01:08:00	16747918-e105-48e6-b352-49de55a1e1c0	Error	CORS restricted that host
+20220411	01:08:05	7487b54f-e629-4a41-a20a-32e447b2b881	Error	CORS restricted that host

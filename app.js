@@ -38,7 +38,7 @@ db.sequelize.sync({force: true}).then(() => {
 
 
 app.use(express.urlencoded({extended: false}));
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 app.use(express.json());
 app.use(logger);
 app.use(bodyParser.json())
@@ -64,6 +64,12 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
+
+  socket.on('message', (msg) => {
+    console.log(`We got message: ${msg}`)
+    io.emit('message', msg)
+  })
+
 });
 
 server.listen(PORT, () => console.log(`Running on ${PORT}`));
