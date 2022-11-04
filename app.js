@@ -12,6 +12,7 @@ const server = http.createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(server)
 const db = require("./model/rolesSequaliser");
+const chatController = require('./controllers/socket/chatController')(io)
 const Role = db.role;
 
 const PORT = process.env.PORT || 3500;
@@ -59,17 +60,5 @@ app.use('*', require('./routes/404'));
 //error handler
 app.use(errorHandler)
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-
-  socket.on('message', (msg) => {
-    console.log(`We got message: ${msg}`)
-    io.emit('message', msg)
-  })
-
-});
 
 server.listen(PORT, () => console.log(`Running on ${PORT}`));

@@ -7,8 +7,7 @@ const path = require('path');
 chatRouter.get('^/$|chat(.html)?',
 [
     roleVerify.verifyToken,
-    roleVerify.isUser,
-    chatController
+    roleVerify.isUser
 
 ],
  (req, res)=>{
