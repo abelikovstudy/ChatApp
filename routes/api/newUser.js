@@ -5,7 +5,8 @@ const roleController = require('../../controllers/verification/roleVerify')
 const checkDuplicate = require('../../controllers/verification/registerVeify')
 
 newUserRouter.post('^/$|/api/newUser?',
-[    checkDuplicate,
+[    
+    checkDuplicate,
     roleController.checkRolesExisted
 
 ],

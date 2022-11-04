@@ -32,16 +32,20 @@ const handleLogin = async (req, res) => {
                 })
             }
             
+
+
             let cookieOptions = {
                 path:"/",
                 sameSite:true,
                 maxAge: 1000 * 60 * 60 * 24, 
-                httpOnly: true, 
+                httpOnly: false, 
             }
         
+            res.cookie('username',req.body.user, cookieOptions)
 
             let token = jwt.sign({
-                id: usr.id
+                id: usr.id,
+                uname: req.body.user
             },
             process.env.ACCESS_TOKEN_SECRET,
             {
@@ -66,12 +70,14 @@ const handleLogin = async (req, res) => {
                             
                     }
                 }
+                
                 res.cookie('x-access-token',token, cookieOptions)
 
                 res.status(200).redirect('/chat')
 
             })
-        })    
+        })
+
     }
     catch(err){
         res.status(500).json({

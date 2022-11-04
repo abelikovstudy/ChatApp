@@ -4,7 +4,7 @@
     </head>
     <body>
         <ul id="messages"></ul>
-         <form id="form" action="">
+         <form id="form" action="/api/test" method="post">
             <input id="input" autocomplete="off" /><button>Send</button>
          </form>
         <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
@@ -14,19 +14,20 @@
             const input = document.getElementById('input')
             const messages = document.getElementById('messages');
             form.addEventListener('submit',(e) => {
-                e.preventDefault();
+               // e.preventDefault();
                 if(input.value){
                     socket.emit('message',input.value);
+                    socket.emit('cookie', document.cookie)
                     input.value = '';
                 }
             })
-
             socket.on('message', (msg) =>{
                 let item = document.createElement('li')
                 item.textContent = msg;
                 messages.appendChild(item)
                 window.scrollTo(0,document.body.scrollHeight)
             })
+
 
         </script>
     </body>

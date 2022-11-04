@@ -35,3 +35,9 @@
 20220411	01:07:42	8b02605f-459a-433b-84d1-7fdfdcf5b830	Error	CORS restricted that host
 20220411	01:08:00	16747918-e105-48e6-b352-49de55a1e1c0	Error	CORS restricted that host
 20220411	01:08:05	7487b54f-e629-4a41-a20a-32e447b2b881	Error	CORS restricted that host
+20220411	22:28:47	ea475325-ac03-41c8-8442-652efbcd466f	TypeError	Cannot read property 'on' of undefined
+20220411	22:50:52	cfccda15-c2ec-47af-9a6a-fdfad8198222	TypeError	app.get is not a function
+20220411	23:28:00	20b65287-9409-42f6-84f6-06b703b381df	ReferenceError	next is not defined
+20220411	23:28:46	de43e532-7612-4bfd-81d4-174b5fd2ec9f	TypeError	Assignment to constant variable.
+20220411	23:34:10	0f8c3c82-ef11-4b98-8a75-80bee385fd3c	TypeError	verifyToken is not a function
+20220411	23:35:11	895485c1-c84c-46e4-acb2-b73a833ebb93	TypeError	verifyToken is not a function

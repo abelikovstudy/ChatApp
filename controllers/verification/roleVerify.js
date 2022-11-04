@@ -21,13 +21,12 @@ const checkRolesExisted = (req, res, next) => {
 
 const verifyToken = (req, res, next) => {
   let token = req.cookies['x-access-token'];
-
+  console.log('emmited')
   if (!token) {
     return res.status(403).send({
       message: "No token provided!"
     });
   }
-
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => { // Secret!
     if (err) {
       return res.status(401).send({
